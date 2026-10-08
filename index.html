@@ -1,0 +1,553 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mihret Menberu - Software Developer, Front-End Developer, UI/UX and Customer Support Specialist">
+    <title>Mihret Menberu | Software Developer</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f8f8f6;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        header {
+            background: #171717;
+            color: white;
+            padding: 20px 8%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a:hover {
+            color: #cfcfcf;
+        }
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            padding: 80px 8%;
+            background: white;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: auto;
+            width: 100%;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 8vw, 85px);
+            line-height: 1;
+            margin-bottom: 25px;
+            max-width: 900px;
+        }
+
+        .hero h1 span {
+            color: #666;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            color: #555;
+            margin-bottom: 35px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            padding: 13px 24px;
+            border: 1px solid #222;
+            border-radius: 5px;
+            transition: 0.2s;
+        }
+
+        .button.primary {
+            background: #171717;
+            color: white;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+        }
+
+        section {
+            padding: 90px 8%;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section-title {
+            font-size: 40px;
+            margin-bottom: 40px;
+        }
+
+        .about {
+            background: #f1f1ef;
+        }
+
+        .about-text {
+            max-width: 850px;
+            font-size: 19px;
+            color: #444;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .skill {
+            background: white;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .projects {
+            background: white;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .project {
+            border: 1px solid #ddd;
+            padding: 25px;
+            border-radius: 8px;
+            background: #fafafa;
+            transition: 0.2s;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+
+        .project h3 {
+            margin-bottom: 12px;
+            font-size: 23px;
+        }
+
+        .project p {
+            color: #555;
+            margin-bottom: 18px;
+        }
+
+        .project a {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .experience {
+            background: #f1f1ef;
+        }
+
+        .experience-item {
+            border-left: 2px solid #222;
+            padding-left: 25px;
+            margin-bottom: 35px;
+        }
+
+        .experience-item h3 {
+            font-size: 21px;
+        }
+
+        .experience-item .date {
+            color: #777;
+            margin-bottom: 8px;
+        }
+
+        .contact {
+            background: #171717;
+            color: white;
+        }
+
+        .contact p {
+            color: #ccc;
+            max-width: 650px;
+            margin-bottom: 25px;
+            font-size: 18px;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            border-bottom: 1px solid white;
+            padding-bottom: 3px;
+        }
+
+        footer {
+            background: #111;
+            color: #999;
+            text-align: center;
+            padding: 25px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 700px) {
+            header {
+                position: relative;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                min-height: 80vh;
+                padding-top: 60px;
+            }
+
+            section {
+                padding: 65px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <div class="logo">Mihret Menberu</div>
+
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>
+            Software Developer<br>
+            <span>with a focus on people.</span>
+        </h1>
+
+        <p>
+            I build responsive, user-friendly web experiences and bring
+            technical, customer support, and sales experience into the work I do.
+        </p>
+
+        <div class="buttons">
+            <a href="#projects" class="button primary">View My Work</a>
+            <a href="#contact" class="button">Contact Me</a>
+        </div>
+    </div>
+</section>
+
+
+<section id="about" class="about">
+    <div class="container">
+        <h2 class="section-title">About Me</h2>
+
+        <p class="about-text">
+            I'm a software developer with experience in front-end development,
+            technical support, customer service, sales development, and virtual
+            assistance.
+
+            <br><br>
+
+            My technical experience includes building responsive interfaces
+            with HTML, CSS, and JavaScript, working with Python, Java, C++,
+            Flutter/Dart, APIs, testing, and debugging. I also have experience
+            with Figma and UI/UX design.
+
+            <br><br>
+
+            Alongside development, I've worked directly with customers and
+            prospects. That experience has taught me how to understand what
+            people need, communicate clearly, solve problems, and work
+            effectively in remote environments.
+        </p>
+    </div>
+</section>
+
+
+<section id="skills">
+    <div class="container">
+        <h2 class="section-title">Skills</h2>
+
+        <div class="skills">
+            <div class="skill">HTML & CSS</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">Python</div>
+            <div class="skill">Java</div>
+            <div class="skill">C++</div>
+            <div class="skill">Flutter & Dart</div>
+            <div class="skill">Responsive Design</div>
+            <div class="skill">UI/UX Design</div>
+            <div class="skill">Figma</div>
+            <div class="skill">API Integration</div>
+            <div class="skill">Software Testing</div>
+            <div class="skill">Technical Support</div>
+            <div class="skill">Customer Support</div>
+            <div class="skill">Sales Development</div>
+            <div class="skill">CRM</div>
+            <div class="skill">Virtual Assistance</div>
+        </div>
+    </div>
+</section>
+
+
+<section id="projects" class="projects">
+    <div class="container">
+
+        <h2 class="section-title">Selected Projects</h2>
+
+        <div class="project-grid">
+
+            <div class="project">
+                <h3>Designo Ceilings</h3>
+
+                <p>
+                    A front-end website project focused on responsive design,
+                    structured layouts, user experience, and a clean business
+                    presentation.
+                </p>
+
+                <a href="https://github.com/ruthdg43/designo-ceilings"
+                   target="_blank">
+                    View Project →
+                </a>
+            </div>
+
+
+            <div class="project">
+                <h3>Uniq Ceilings</h3>
+
+                <p>
+                    A responsive business website project designed to present
+                    services clearly while maintaining a simple and user-friendly
+                    interface.
+                </p>
+
+                <a href="https://github.com/ruthdg43/Uniq-ceilings"
+                   target="_blank">
+                    View Project →
+                </a>
+            </div>
+
+
+            <div class="project">
+                <h3>Rapido Bathroom</h3>
+
+                <p>
+                    A front-end website project focused on responsive layouts,
+                    visual presentation, and creating a straightforward user
+                    experience.
+                </p>
+
+                <a href="https://github.com/ruthdg43/rapido-bathroom"
+                   target="_blank">
+                    View Project →
+                </a>
+            </div>
+
+
+            <div class="project">
+                <h3>Roof</h3>
+
+                <p>
+                    A web development project demonstrating front-end structure,
+                    responsive design, and user-focused website development.
+                </p>
+
+                <a href="https://github.com/ruthdg43/Roof"
+                   target="_blank">
+                    View Project →
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<section id="experience" class="experience">
+    <div class="container">
+
+        <h2 class="section-title">Experience</h2>
+
+
+        <div class="experience-item">
+            <h3>Technical Support — Kent Academy</h3>
+            <div class="date">May 2026 – August 2026 · Remote</div>
+            <p>
+                Provided remote technical support, troubleshooting hardware
+                and software issues, managing support requests, and helping
+                non-technical users resolve problems.
+            </p>
+        </div>
+
+
+        <div class="experience-item">
+            <h3>Sales Development Representative — SG Services</h3>
+            <div class="date">January 2026 – April 2026 · Remote</div>
+            <p>
+                Handled outbound prospecting, lead qualification, customer
+                inquiries, follow-ups, and sales development activities.
+            </p>
+        </div>
+
+
+        <div class="experience-item">
+            <h3>Remote Sales Representative — Vertex</h3>
+            <div class="date">May 2025 – August 2025 · Remote</div>
+            <p>
+                Communicated with prospective customers, managed leads,
+                handled follow-ups, and maintained customer information through
+                CRM systems.
+            </p>
+        </div>
+
+
+        <div class="experience-item">
+            <h3>Digital Marketer & Virtual Assistant — Sheger Gebeta</h3>
+            <div class="date">January 2025 – April 2025</div>
+            <p>
+                Supported digital marketing campaigns, customer inquiries,
+                social media activities, and administrative tasks.
+            </p>
+        </div>
+
+
+        <div class="experience-item">
+            <h3>Software Developer — Crdle</h3>
+            <div class="date">May 2024 – December 2024</div>
+            <p>
+                Developed front-end interfaces using HTML, CSS, and JavaScript,
+                worked with APIs, tested features, debugged applications, and
+                contributed to improving user experience.
+            </p>
+        </div>
+
+
+        <div class="experience-item">
+            <h3>Call Center Representative — MMCY</h3>
+            <div class="date">January 2024 – April 2024</div>
+            <p>
+                Handled high-volume inbound and outbound calls, responded to
+                customer inquiries, and maintained accurate records.
+            </p>
+        </div>
+
+
+        <div class="experience-item">
+            <h3>Virtual Assistant to CEO — Nile Insurance</h3>
+            <div class="date">2023</div>
+            <p>
+                Supported executive scheduling, calendar management,
+                documentation, reporting, and administrative tasks.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+
+<section id="contact" class="contact">
+    <div class="container">
+
+        <h2 class="section-title">Let's Work Together</h2>
+
+        <p>
+            I'm open to opportunities in software development, front-end
+            development, technical support, customer support, and sales.
+        </p>
+
+        <div class="contact-links">
+
+            <a href="mailto:menberumihret@gmail.com">
+                Email Me
+            </a>
+
+            <a href="https://github.com/ruthdg43"
+               target="_blank">
+                GitHub
+            </a>
+
+        </div>
+
+    </div>
+</section>
+
+
+<footer>
+    © 2026 Mihret Menberu. All rights reserved.
+</footer>
+
+
+</body>
+</html>
+```
